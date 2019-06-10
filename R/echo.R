@@ -3,7 +3,7 @@
 #' @param string Message to print
 #' @param lb `2` if break lines are included at the start and end of the string,
 #' `1` final only and `0` for no break lines.
-#' @import tictoc tic
+#' @importFrom  tictoc tic
 #' @examples
 #' echo("Analyzing data)
 #'
