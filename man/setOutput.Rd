@@ -4,18 +4,18 @@
 \alias{setOutput}
 \title{Create output directory}
 \usage{
-setOutput(name, date)
+setOutput(date, name, sep = "_")
 }
 \arguments{
-\item{name}{Directory name}
-
 \item{date}{Date}
+
+\item{name}{Directory name}
 }
 \description{
 Create output directory
 }
 \examples{
-setOutput("data_analysis", "2019-05-30")
+setOutput("2019-05-30", "data_analysis")
 
 }
 \author{

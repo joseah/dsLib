@@ -4,8 +4,10 @@
 #' @param lb `2` if break lines are included at the start and end of the string,
 #' `1` final only and `0` for no break lines.
 #' @importFrom  tictoc tic
+#' @export
 #' @examples
-#' echo("Analyzing data)
+#'
+#' echo("Analyzing data")
 #'
 
 echo <- function(string, lb = 2, ellipsis = TRUE) {
@@ -41,8 +43,10 @@ echo <- function(string, lb = 2, ellipsis = TRUE) {
 #' @title Prints "DONE!" message
 #' @author Jose Alquicira-Hernandez
 #' @importFrom tictoc toc
+#' @export
 #' @examples
 #' done()
+#'
 
 done <- function(){
   string <- paste("DONE!")

@@ -15,6 +15,11 @@ echo(string, lb = 2, ellipsis = TRUE)
 \description{
 Prints formatted message
 }
+\examples{
+
+echo("Analyzing data")
+
+}
 \author{
 Jose Alquicira-Hernandez
 }

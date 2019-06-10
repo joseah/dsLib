@@ -11,6 +11,7 @@ Prints "DONE!" message
 }
 \examples{
 done()
+
 }
 \author{
 Jose Alquicira-Hernandez
