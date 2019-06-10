@@ -4,6 +4,7 @@
 #' @param n index limit
 #' @return A subset from provided object. If `n` exceeds dimensions of `x`, returns
 #' maximun dimension
+#' @export
 #' @examples
 #' glance(cars)
 #'
