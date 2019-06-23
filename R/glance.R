@@ -13,7 +13,7 @@
 
 glance <- function(x, n = 5) {
 
-  if(is.data.frame(x) | is.matrix(x)){
+  if(is.data.frame(x) | is.matrix(x) | is(x, "Matrix")){
 
     nRow <- if(nrow(x) < n) nrow(x) else n
     nCol <- if(ncol(x) < n) ncol(x) else n
