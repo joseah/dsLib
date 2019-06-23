@@ -4,6 +4,6 @@
 #' @importFrom devtools session_info
 
 printSession  <- function() {
-  options(width = 70)
+  options(width = 90)
   session_info()
 }
