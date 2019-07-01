@@ -4,12 +4,16 @@
 \alias{init}
 \title{Prints formatted message}
 \usage{
-init(string, lb = TRUE, ellipsis = TRUE, tic = TRUE)
+init(string = NULL, start = "==>", ellipsis = TRUE, mem = TRUE)
 }
 \arguments{
 \item{string}{Message to print}
 
-\item{lb}{If `TRUE`, a break line is included at the start of the string}
+\item{start}{A string symbol}
+
+\item{ellipsis}{If TRUE, adds ellipsis to message}
+
+\item{mem}{Track memory usage?}
 }
 \description{
 Prints formatted message

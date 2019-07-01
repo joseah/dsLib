@@ -4,10 +4,10 @@
 \alias{done}
 \title{Prints "DONE!" message}
 \usage{
-done(toc = TRUE)
+done(start = "==>")
 }
 \arguments{
-\item{toc}{If TRUE and `tic()` was used before, displays elapsed time}
+\item{start}{A string symbol}
 }
 \description{
 Prints "DONE!" message
