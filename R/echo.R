@@ -39,6 +39,7 @@ init <- function(string = NULL, start = "==>", ellipsis = TRUE, mem = TRUE) {
 #' @title Prints "DONE!" message
 #' @author Jose Alquicira-Hernandez
 #' @importFrom tictoc toc
+#' @importFrom pryr mem_used
 #' @param start A string symbol
 #' @export
 #' @examples
@@ -57,9 +58,10 @@ done <- function(start = "==>"){
     time <- formatTime(timeDiff)
     timeDiff <- round(time$value, digits = 3)
     timeUnit <- time$unit
-    string <- paste(">>> Elapsed time:", timeDiff, timeUnit, "\n", start, " DONE!")
+    string <- paste(">>> Elapsed time:", timeDiff, timeUnit, "\n")
+    string <- paste0(string, start, " DONE!\n")
   }else{
-    string <- paste0(start, " DONE!")
+    string <- paste0(start, " DONE!\n")
   }
 
 
