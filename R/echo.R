@@ -27,7 +27,7 @@ init <- function(string = NULL, start = "==>", ellipsis = TRUE, mem = TRUE) {
 
   final <- paste0(" ", ellipsis ,"\n")
   mem <- capture.output(print(mem_used()))
-  mem <- paste0(">> Current mem use = ", mem)
+  mem <- paste0(">> Current mem use = ", mem, "\n")
   final <- paste0(final, mem)
 
   cat(start, paste0(format(Sys.time(), "(%d/%b/%Y %X): "), string, final), sep = "")
