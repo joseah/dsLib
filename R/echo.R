@@ -59,9 +59,9 @@ done <- function(start = "==>"){
     timeDiff <- round(time$value, digits = 3)
     timeUnit <- time$unit
     string <- paste(">>> Elapsed time:", timeDiff, timeUnit, "\n")
-    string <- paste0(string, start, " DONE!\n")
+    string <- paste0(string, start, " DONE!\n\n")
   }else{
-    string <- paste0(start, " DONE!\n")
+    string <- paste0(start, " DONE!\n\n")
   }
 
 
