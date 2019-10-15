@@ -12,7 +12,7 @@
 #' init("Analyzing data")
 #'
 
-init <- function(string = NULL, start = "==>", ellipsis = TRUE, mem = TRUE) {
+inicio <- function(string = NULL, start = "==>", ellipsis = TRUE, mem = TRUE) {
 
   if(is.null(string)){
     string <- ""
@@ -46,7 +46,7 @@ init <- function(string = NULL, start = "==>", ellipsis = TRUE, mem = TRUE) {
 #' done()
 #'
 
-done <- function(start = "==>"){
+fin <- function(start = "==>"){
 
   mem <- capture.output(print(mem_used()))
   mem <- paste0(">> Final mem use = ", mem)

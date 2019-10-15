@@ -8,7 +8,7 @@
 #' setOutput("2019-05-30", "data_analysis")
 #'
 
-setOutput <- function(date, name, sep = "_") {
+set_output <- function(date, name, sep = "_") {
 
   if(!is.character(name) & is.character(date)){
     stop("All arguments must be strings")
