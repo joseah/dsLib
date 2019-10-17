@@ -2,7 +2,7 @@ Package: dsLib
 Type: Package
 Title: Tidyverse complement
 Version: 0.1.0
-Author: person("Jose", "Alquicira-Hernandez", email = "alquicirajose@gmail.com", role = c("aut", "cre"))
+Authors@R: person("Jose", "Alquicira-Hernandez", email = "alquicirajose@gmail.com", role = c("aut", "cre"))
 Description: Set of auxiliary functions for data analysis
 License: GPL-3
 Encoding: UTF-8
