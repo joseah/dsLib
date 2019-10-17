@@ -13,7 +13,7 @@ fin(start = "==>")
 Prints "DONE!" message
 }
 \examples{
-done()
+fin()
 
 }
 \author{

@@ -2,10 +2,11 @@
 #' @author Jose Alquicira-Hernandez
 #' @param date Date
 #' @param name Directory name
+#' @param sep Character delimiter to separate data from directory name
 #' @importFrom here here
 #' @export
 #' @examples
-#' setOutput("2019-05-30", "data_analysis")
+#' set_output("2019-05-30", "data_analysis")
 #'
 
 set_output <- function(date, name, sep = "_") {

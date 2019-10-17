@@ -20,7 +20,7 @@ Prints formatted message
 }
 \examples{
 
-init("Analyzing data")
+inicio("Analyzing data")
 
 }
 \author{

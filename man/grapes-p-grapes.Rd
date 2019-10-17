@@ -4,19 +4,13 @@
 \alias{\%p\%}
 \title{Concatenates strings via operator}
 \usage{
-... \%p\% NA
+"Hello " %p% "world"
 }
 \arguments{
 \item{...}{strings to paste using paste0()}
 }
 \description{
 Concatenates strings via operator
-}
-\examples{
-
-"Hello " \%p\% "world"
-
-
 }
 \author{
 Jose Alquicira-Hernandez

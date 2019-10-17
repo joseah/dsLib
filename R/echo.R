@@ -6,10 +6,12 @@
 #' @param mem Track memory usage?
 #' @importFrom  tictoc tic
 #' @importFrom pryr mem_used
+#' @importFrom methods is
+#' @importFrom utils capture.output
 #' @export
 #' @examples
 #'
-#' init("Analyzing data")
+#' inicio("Analyzing data")
 #'
 
 inicio <- function(string = NULL, start = "==>", ellipsis = TRUE, mem = TRUE) {
@@ -38,12 +40,14 @@ inicio <- function(string = NULL, start = "==>", ellipsis = TRUE, mem = TRUE) {
 
 #' @title Prints "DONE!" message
 #' @author Jose Alquicira-Hernandez
+#' @param start A string symbol
 #' @importFrom tictoc toc
 #' @importFrom pryr mem_used
-#' @param start A string symbol
+#' @importFrom methods is
+#' @importFrom utils capture.output
 #' @export
 #' @examples
-#' done()
+#' fin()
 #'
 
 fin <- function(start = "==>"){

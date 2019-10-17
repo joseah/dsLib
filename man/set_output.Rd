@@ -10,12 +10,14 @@ set_output(date, name, sep = "_")
 \item{date}{Date}
 
 \item{name}{Directory name}
+
+\item{sep}{Character delimiter to separate data from directory name}
 }
 \description{
 Create output directory
 }
 \examples{
-setOutput("2019-05-30", "data_analysis")
+set_output("2019-05-30", "data_analysis")
 
 }
 \author{
