@@ -8,7 +8,7 @@
 - Memory usage
 - Versions of code (from Git) and R session information
 
-## Computing time and memory usage
+# Computing time and memory usage
 
 For example, if we need to track the memory usage and computing time from a chunk of code, `dsLib` provides a simple way to do it as shown below:
 
@@ -33,7 +33,7 @@ Which returns the following information
 
 By using the pair `inicio()` / `fin()` it is possible to locally monitor the memory usage and execution time from a script. Furthermore, it may be used as a proxy to track the code location resulting on an error after the execution of a script.
 
-## R/git session info
+# R/git session info
 
 `print_session()` provides the git status of the last commit (if git is being used for version control) along with the current R session information.
 
@@ -113,6 +113,8 @@ The output from `print_session()` is shown in the R terminal and printed to a fi
 
 # Miscellaneous
 
+## String concatenation
+
 To facilitate the concatenation of strings, `dsLib` provides the `%p%` operator.
 
 Example:
@@ -127,3 +129,35 @@ Output:
 ```
 
 `%p%` is a wrapper for `paste0()` but allows the flexibility of using the function as an operator.
+
+## Get a "glance" from an R object
+
+Sometimes, it is ideal to explore the first dimensions of an object to have an idea about its content. Although `head()`, `str()` and `glimpse()` are some options, they provide more information than needed and/or are greatly verbose.
+
+The function `glance()` subsets the first `n` elements in `m` dimensions from a vector, matrix, Matrix::Matrix, list, or data.frame.
+
+Example:
+
+```r
+glance(Seurat::pbmc_small@raw.data)
+```
+
+Output:
+
+```
+5 x 5 sparse Matrix of class "dgTMatrix"
+        ATGCCAGAACGACT CATGGCCTGTGCAT GAACCTGATGAACC TGACTGGATTCTCA AGTCAGACTGCACA
+MS4A1                .              .              .              .              .
+CD79B                1              .              .              .              .
+CD79A                .              .              .              .              .
+HLA-DRA              .              1              .              .              1
+TCL1A                .              .              .              .              .
+```
+
+`glance()` returns the first 5 rows and columns from a sparse Matrix object. Unlike `head()`, `glance()` operates in all dimensions of the object.
+
+
+
+
+
+
