@@ -110,3 +110,20 @@ The next section is the R session details obtained via `devtools::session_info()
 ```
 
 The output from `print_session()` is shown in the R terminal and printed to a file called `session.info`. The output path of this file is the current working directory.
+
+# Miscellaneous
+
+To facilitate the concatenation of strings, `dsLib` provides the `%p%` operator.
+
+Example:
+
+```r
+"ACG" %p% "TCG" %p% "CCC"
+```
+Output:
+
+```
+[1] "ACGTCGCCC"
+```
+
+`%p%` is a wrapper for `paste0()` but allows the flexibility of using the function as an operator.
