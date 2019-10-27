@@ -15,4 +15,5 @@ Imports:
     devtools,
     git2r,
     pryr,
-    methods
+    methods,
+    ggplot2
