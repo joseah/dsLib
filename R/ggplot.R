@@ -26,11 +26,10 @@ no_legend <- function(...) {
 rotate_x <- function(angle = 90, ...) {
 
   theme_rotate <- theme(
-    axis.text.x = element_text(angle = angle, hjust = 1),
+    axis.text.x = element_text(angle = angle, hjust = 0.95, vjust = 0.5),
     validate = TRUE,
     ...)
 
   return(theme_rotate)
 }
-
 
