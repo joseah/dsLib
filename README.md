@@ -111,6 +111,31 @@ The next section is the R session details obtained via `devtools::session_info()
 
 The output from `print_session()` is shown in the R terminal and printed to a file called `session.info`. The output path of this file is the current working directory.
 
+# Plotting with ggplot2
+
+## Rotate x-axis labels
+
+The `rotate_x()` function allows to rotate the x-axis lables by default by 90 degrees. This function is shorter and more intuitive than rotating the labels via `element_text(angle = angle, hjust = 1)` within the `theme` function.
+
+## Remove legend
+
+The function `no_legend()` removes the legend automatically if added after the theme set-up.
+
+An example on `rotate_x()` and `no_legend()` is shown below:
+
+
+```r
+library("ggplot2")
+library("dsLib")
+
+ggplot(iris, aes(Species, Sepal.Length, fill = Species)) +
+    geom_boxplot() +
+    theme_classic() +
+    scale_fill_brewer(palette =  "Set1") +
+    rotate_x() +
+    no_legend()
+```
+
 # Miscellaneous
 
 ## String concatenation
