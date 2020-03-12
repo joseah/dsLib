@@ -14,7 +14,7 @@
 #' inicio("Analyzing data")
 #'
 
-inicio <- function(string = NULL, start = "==>", ellipsis = TRUE, mem = TRUE) {
+inicio <- function(string = NULL, start = "+ ", ellipsis = TRUE, mem = TRUE) {
 
   if(is.null(string)){
     string <- ""
@@ -28,10 +28,15 @@ inicio <- function(string = NULL, start = "==>", ellipsis = TRUE, mem = TRUE) {
   }
 
   final <- paste0(" ", ellipsis ,"\n")
-  mem <- capture.output(print(mem_used()))
-  mem <- paste0(">> Current mem use = ", mem, "\n")
-  final <- paste0(final, mem)
 
+  if(mem){
+    mem <- capture.output(print(mem_used()))
+    mem <- paste0("  - Current mem use = ", mem, "\n")
+  }else{
+    mem <- ""
+  }
+
+  final <- paste0(final, mem)
   cat(start, paste0(format(Sys.time(), "(%d/%b/%Y %X): "), string, final), sep = "")
   tic()
 
@@ -50,19 +55,24 @@ inicio <- function(string = NULL, start = "==>", ellipsis = TRUE, mem = TRUE) {
 #' fin()
 #'
 
-fin <- function(start = "==>"){
-
-  mem <- capture.output(print(mem_used()))
-  mem <- paste0(">> Final mem use = ", mem)
+fin <- function(start = "+ ", mem = TRUE){
 
   x <- toc(log = TRUE, quiet = TRUE)
+
+  if(mem){
+    mem <- capture.output(print(mem_used()))
+    mem <- paste0("  - Final mem use = ", mem)
+  }else{
+    mem <- ""
+  }
+
 
   if(!is.null(x)){
     timeDiff <- x$toc - x$tic
     time <- formatTime(timeDiff)
     timeDiff <- round(time$value, digits = 3)
     timeUnit <- time$unit
-    string <- paste(">>> Elapsed time:", timeDiff, timeUnit, "\n")
+    string <- paste("  * Elapsed time:", timeDiff, timeUnit, "\n")
     string <- paste0(string, start, " DONE!\n\n")
   }else{
     string <- paste0(start, " DONE!\n\n")
