@@ -4,7 +4,7 @@
 \alias{inicio}
 \title{Prints formatted message}
 \usage{
-inicio(string = NULL, start = "==>", ellipsis = TRUE, mem = TRUE)
+inicio(string = NULL, start = "+ ", ellipsis = TRUE, mem = FALSE)
 }
 \arguments{
 \item{string}{Message to print}
