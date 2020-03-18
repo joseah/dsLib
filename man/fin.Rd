@@ -4,7 +4,7 @@
 \alias{fin}
 \title{Prints "DONE!" message}
 \usage{
-fin(start = "==>")
+fin(start = "+ ", mem = FALSE)
 }
 \arguments{
 \item{start}{A string symbol}

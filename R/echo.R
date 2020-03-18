@@ -14,7 +14,7 @@
 #' inicio("Analyzing data")
 #'
 
-inicio <- function(string = NULL, start = "+ ", ellipsis = TRUE, mem = TRUE) {
+inicio <- function(string = NULL, start = "+ ", ellipsis = TRUE, mem = FALSE) {
 
   if(is.null(string)){
     string <- ""
@@ -55,7 +55,7 @@ inicio <- function(string = NULL, start = "+ ", ellipsis = TRUE, mem = TRUE) {
 #' fin()
 #'
 
-fin <- function(start = "+ ", mem = TRUE){
+fin <- function(start = "+ ", mem = FALSE){
 
   x <- toc(log = TRUE, quiet = TRUE)
 
