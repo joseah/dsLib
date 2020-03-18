@@ -1,13 +1,14 @@
 #' @title Prints R session info
 #' @author Jose Alquicira-Hernandez
 #' @param path Path to write file with the session info
+#' @param save Write session info? If \code{FALSE}, session info is only displayed in console
 #' @importFrom here here
 #' @importFrom git2r revparse_single
 #' @importFrom git2r repository
 #' @importFrom devtools session_info
 #' @export
 
-print_session  <- function(path = NULL) {
+print_session  <- function(path = NULL, save = TRUE) {
   output <- ""
   repo <- tryCatch(revparse_single(repository(here()),"HEAD"),
                    error = function(e) {
@@ -21,7 +22,7 @@ print_session  <- function(path = NULL) {
     output <- paste0(output, paste0(author, collapse = "\n"), "\n")
   }
 
-  output <- paste0(output, paste0(session_info(), collapse = "\n"))
+  output <- paste0(output, paste0(session_info(), collapse = "\n"), "\n\n")
 
   if(is.null(path)){
     path <- "session.info"
@@ -30,7 +31,7 @@ print_session  <- function(path = NULL) {
   }
 
   # Write file
-  cat(output, file = path)
+  if(save) cat(output, file = path)
 
   # Print output
   width <- options()$width

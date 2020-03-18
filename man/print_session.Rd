@@ -4,10 +4,12 @@
 \alias{print_session}
 \title{Prints R session info}
 \usage{
-print_session(path = NULL)
+print_session(path = NULL, save = TRUE)
 }
 \arguments{
 \item{path}{Path to write file with the session info}
+
+\item{save}{Write session info? If \code{FALSE}, session info is only displayed in console}
 }
 \description{
 Prints R session info
