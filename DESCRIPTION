@@ -10,8 +10,10 @@ LazyData: true
 RoxygenNote: 7.1.0
 Depends:
     here,
-    tictoc
 Imports:
+    tictoc,
+    cli,
+    crayon,
     devtools,
     git2r,
     pryr,

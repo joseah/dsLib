@@ -1,8 +1,6 @@
 #' @title Prints formatted message
 #' @author Jose Alquicira-Hernandez
-#' @param string Message to print
-#' @param start A string symbol
-#' @param ellipsis If TRUE, adds ellipsis to message
+#' @param message Message to print
 #' @param mem Track memory usage?
 #' @importFrom  tictoc tic
 #' @importFrom pryr mem_used
@@ -14,30 +12,21 @@
 #' inicio("Analyzing data")
 #'
 
-inicio <- function(string = NULL, start = "+ ", ellipsis = TRUE, mem = FALSE) {
-
-  if(is.null(string)){
-    string <- ""
-    ellipsis <- FALSE
-  }
-
-  if(ellipsis){
-    ellipsis <- "..."
-  }else{
-    ellipsis <- ""
-  }
-
-  final <- paste0(" ", ellipsis ,"\n")
+inicio <- function(message = NULL,  mem = FALSE){
 
   if(mem){
     mem <- capture.output(print(mem_used()))
-    mem <- paste0("  - Current mem use = ", mem, "\n")
+    mem <- paste0(cli::symbol$star ,  " Current mem used = ", crayon::green(mem), "\n")
   }else{
     mem <- ""
   }
 
-  final <- paste0(final, mem)
-  cat(start, paste0(format(Sys.time(), "(%d/%b/%Y %X): "), string, final), sep = "")
+  cat(cli::symbol$tick,
+      crayon::blue(paste0(format(Sys.time(), "(%d/%b/%Y %X): "))),
+      crayon::bold(message),
+      "\n",
+      mem,
+      sep = "")
   tic()
 
 }
@@ -45,7 +34,7 @@ inicio <- function(string = NULL, start = "+ ", ellipsis = TRUE, mem = FALSE) {
 
 #' @title Prints "DONE!" message
 #' @author Jose Alquicira-Hernandez
-#' @param start A string symbol
+#' @param mem Track memory usage?
 #' @importFrom tictoc toc
 #' @importFrom pryr mem_used
 #' @importFrom methods is
@@ -55,13 +44,13 @@ inicio <- function(string = NULL, start = "+ ", ellipsis = TRUE, mem = FALSE) {
 #' fin()
 #'
 
-fin <- function(start = "+ ", mem = FALSE){
+fin <- function(mem = FALSE){
 
   x <- toc(log = TRUE, quiet = TRUE)
 
   if(mem){
     mem <- capture.output(print(mem_used()))
-    mem <- paste0("  - Final mem use = ", mem)
+    mem <- paste0(cli::symbol$star ,  " Final mem used   = ", crayon::green(mem), "\n")
   }else{
     mem <- ""
   }
@@ -72,15 +61,16 @@ fin <- function(start = "+ ", mem = FALSE){
     time <- formatTime(timeDiff)
     timeDiff <- round(time$value, digits = 3)
     timeUnit <- time$unit
-    string <- paste("  * Elapsed time:", timeDiff, timeUnit, "\n")
-    string <- paste0(string, start, " DONE!\n\n")
-  }else{
-    string <- paste0(start, " DONE!\n\n")
+    string <- paste(cli::symbol$star, " Elapsed time:", crayon::yellow(timeDiff, timeUnit), "\n")
   }
 
 
-  string <- paste0(mem, "\n", string)
-  cat(string)
+  string <- paste0(mem,
+                   string)
+  cat(string,
+      cli::symbol$tick,
+      crayon::blue(paste0(format(Sys.time(), "(%d/%b/%Y %X): "))),
+      crayon::bold("DONE!"), sep = "")
 }
 
 #' @title Formats time for seconds, minutes and hours
