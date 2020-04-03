@@ -16,8 +16,8 @@ print_session  <- function(path = NULL, save = TRUE) {
                    })
   if(!is.null(repo)){
     output <- "- Git details:\n"
-    output <- paste0(output, "Commit: ", repo$sha, "\n")
-    output <- paste0(output, "Message: ", repo$summary, "\n")
+    output <- paste0(output, "Commit: ", crayon::yellow(repo$sha), "\n")
+    output <- paste0(output, "Message: ", crayon::bold(repo$summary), "\n")
     author <- capture.output(print(repo$author))
     output <- paste0(output, paste0(author, collapse = "\n"), "\n")
   }
