@@ -33,3 +33,20 @@ rotate_x <- function(angle = 90, ...) {
   return(theme_rotate)
 }
 
+
+#' @title Theme pub
+#' @author Jose Alquicira-Hernandez
+#' @param ... A ggplot object
+#' @importFrom ggplot2 theme element_text element_blank element_line
+#' @export
+#'
+
+theme_pub <- function(...) {
+  theme_pub <- theme(text = element_text(size = 14),
+                     panel.background = element_blank(),
+                     axis.text.x = element_text(color = "black"),
+                     axis.text.y = element_text(color = "black"),
+                     axis.line = element_line(size = 0.25),
+                     validate = TRUE, ...)
+  theme_pub
+}
