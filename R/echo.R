@@ -55,7 +55,7 @@ fin <- function(mem = FALSE){
     mem <- ""
   }
 
-
+  string <- ""
   if(!is.null(x)){
     timeDiff <- x$toc - x$tic
     time <- formatTime(timeDiff)

@@ -4,14 +4,10 @@
 \alias{inicio}
 \title{Prints formatted message}
 \usage{
-inicio(string = NULL, start = "+ ", ellipsis = TRUE, mem = FALSE)
+inicio(message = NULL, mem = FALSE)
 }
 \arguments{
-\item{string}{Message to print}
-
-\item{start}{A string symbol}
-
-\item{ellipsis}{If TRUE, adds ellipsis to message}
+\item{message}{Message to print}
 
 \item{mem}{Track memory usage?}
 }

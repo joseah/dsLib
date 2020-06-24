@@ -7,7 +7,7 @@
 theme_pub(...)
 }
 \arguments{
-\item{...}{A ggplot object}
+\item{...}{Additional arguments for theme}
 }
 \description{
 Theme pub

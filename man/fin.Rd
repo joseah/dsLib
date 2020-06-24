@@ -4,10 +4,10 @@
 \alias{fin}
 \title{Prints "DONE!" message}
 \usage{
-fin(start = "+ ", mem = FALSE)
+fin(mem = FALSE)
 }
 \arguments{
-\item{start}{A string symbol}
+\item{mem}{Track memory usage?}
 }
 \description{
 Prints "DONE!" message

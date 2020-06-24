@@ -1,6 +1,6 @@
 #' @title Remove legend from ggplot
 #' @author Jose Alquicira-Hernandez
-#' @param ... A ggplot object
+#' @param ... Additional arguments for theme
 #' @importFrom ggplot2 theme
 #' @export
 #'
@@ -17,7 +17,8 @@ no_legend <- function(...) {
 
 #' @title Rotate x-axis labels from ggplot
 #' @author Jose Alquicira-Hernandez
-#' @param ... A ggplot object
+#' @param angle rotation angle of x-axis labels
+#' @param ... Additional arguments for theme
 #' @importFrom ggplot2 theme
 #' @importFrom ggplot2 element_text
 #' @export
@@ -36,8 +37,8 @@ rotate_x <- function(angle = 90, ...) {
 
 #' @title Theme pub
 #' @author Jose Alquicira-Hernandez
-#' @param ... A ggplot object
-#' @importFrom ggplot2 theme element_text element_blank element_line
+#' @param ... Additional arguments for theme
+#' @importFrom ggplot2 theme element_text element_blank element_line element_rect
 #' @export
 #'
 
@@ -47,6 +48,34 @@ theme_pub <- function(...) {
                      axis.text.x = element_text(color = "black"),
                      axis.text.y = element_text(color = "black"),
                      axis.line = element_line(size = 0.25),
+                     strip.background = element_rect(color = "black", fill = "white"),
+                     panel.border = element_rect(fill = NA, colour = "grey20"),
                      validate = TRUE, ...)
   theme_pub
 }
+
+#' @title Theme lattice
+#' @author Jose Alquicira-Hernandez
+#' @param ... Additional arguments for theme
+#' @importFrom ggplot2 theme element_text element_blank element_line element_rect
+#' @export
+#'
+
+theme_lattice <- function(...) {
+  theme_lattice <- theme(text = element_text(size = 14),
+                     panel.background = element_blank(),
+                     axis.text.x = element_text(color = "black"),
+                     axis.text.y = element_text(color = "black"),
+                     axis.line = element_line(size = 0.25),
+                     strip.background = element_rect(color = "black", fill =  "#ffe5cc"),
+                     panel.border = element_rect(fill = NA, colour = "grey20"),
+                     validate = TRUE, ...)
+  theme_lattice
+}
+
+
+
+
+
+
+

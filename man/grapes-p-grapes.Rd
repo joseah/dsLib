@@ -6,9 +6,6 @@
 \usage{
 "Hello " %p% "world"
 }
-\arguments{
-\item{...}{strings to paste using paste0()}
-}
 \description{
 Concatenates strings via operator
 }

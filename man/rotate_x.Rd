@@ -7,7 +7,9 @@
 rotate_x(angle = 90, ...)
 }
 \arguments{
-\item{...}{A ggplot object}
+\item{angle}{rotation angle of x-axis labels}
+
+\item{...}{Additional arguments for theme}
 }
 \description{
 Rotate x-axis labels from ggplot
