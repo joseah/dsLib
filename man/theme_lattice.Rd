@@ -4,9 +4,23 @@
 \alias{theme_lattice}
 \title{Theme lattice}
 \usage{
-theme_lattice(...)
+theme_lattice(
+  base_size = 14,
+  base_family = "",
+  border_color = "grey20",
+  border_size = 0.6,
+  ...
+)
 }
 \arguments{
+\item{base_size}{Text size}
+
+\item{base_family}{Text family}
+
+\item{border_color}{Border border color}
+
+\item{border_size}{Border size color}
+
 \item{...}{Additional arguments for theme}
 }
 \description{

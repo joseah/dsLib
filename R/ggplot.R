@@ -37,38 +37,50 @@ rotate_x <- function(angle = 90, ...) {
 
 #' @title Theme pub
 #' @author Jose Alquicira-Hernandez
+#' @param base_size Text size
+#' @param base_family Text family
+#' @param border_color Border border color
+#' @param border_size  Border size color
 #' @param ... Additional arguments for theme
 #' @importFrom ggplot2 theme element_text element_blank element_line element_rect
 #' @export
 #'
 
-theme_pub <- function(...) {
-  theme_pub <- theme(text = element_text(size = 14),
+theme_pub <- function(base_size = 14, base_family = "",
+                      border_color = "grey20", border_size = 0.6, ...) {
+  theme_pub <- theme(text = element_text(size = base_size, family = base_family),
                      panel.background = element_blank(),
                      axis.text.x = element_text(color = "black"),
                      axis.text.y = element_text(color = "black"),
-                     axis.line = element_line(size = 0.25),
+                     axis.line = element_blank(),
                      strip.background = element_rect(color = "black", fill = "white"),
-                     panel.border = element_rect(fill = NA, colour = "grey20"),
+                     panel.border = element_rect(fill = NA, colour = border_color, size = border_size),
+                     legend.key = element_rect(fill = "white", colour = NA),
                      validate = TRUE, ...)
   theme_pub
 }
 
 #' @title Theme lattice
 #' @author Jose Alquicira-Hernandez
+#' @param base_size Text size
+#' @param base_family Text family
+#' @param border_color Border border color
+#' @param border_size  Border size color
 #' @param ... Additional arguments for theme
 #' @importFrom ggplot2 theme element_text element_blank element_line element_rect
 #' @export
 #'
 
-theme_lattice <- function(...) {
-  theme_lattice <- theme(text = element_text(size = 14),
+theme_lattice <- function(base_size = 14, base_family = "",
+                          border_color = "grey20", border_size = 0.6, ...) {
+  theme_lattice <- theme(text = element_text(size = base_size, family = base_family),
                      panel.background = element_blank(),
                      axis.text.x = element_text(color = "black"),
                      axis.text.y = element_text(color = "black"),
-                     axis.line = element_line(size = 0.25),
+                     axis.line = element_blank(),
                      strip.background = element_rect(color = "black", fill =  "#ffe5cc"),
-                     panel.border = element_rect(fill = NA, colour = "grey20"),
+                     panel.border = element_rect(fill = NA, colour = border_color, size = border_size),
+                     legend.key = element_rect(fill = "white", colour = NA),
                      validate = TRUE, ...)
   theme_lattice
 }
