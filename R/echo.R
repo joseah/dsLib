@@ -70,7 +70,7 @@ fin <- function(mem = FALSE){
   cat(string,
       cli::symbol$tick,
       crayon::blue(paste0(format(Sys.time(), "(%d/%b/%Y %X): "))),
-      crayon::bold("DONE!"), sep = "")
+      crayon::bold("DONE!\n"), sep = "")
 }
 
 #' @title Formats time for seconds, minutes and hours
