@@ -2,7 +2,7 @@
 % Please edit documentation in R/progressr.R
 \name{setup_progressr}
 \alias{setup_progressr}
-\title{Seur up progressr iterator}
+\title{Set up progressr future map iterator}
 \usage{
 setup_progressr()
 }

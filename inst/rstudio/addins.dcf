@@ -1,0 +1,17 @@
+Name: Define maxSize global (future)
+Description: Adds metadata to R Script
+Binding: set_future_globals
+Interactive: false
+
+Name: Add progressr iterator
+Description: Adds progressr iterator
+Binding: setup_progressr
+Interactive: false
+
+Name: Set up analysis
+Description: Adds metadata to R Script
+Binding: setup_analysis
+Interactive: true
+
+
+
