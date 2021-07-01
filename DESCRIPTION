@@ -19,4 +19,6 @@ Imports:
     git2r,
     pryr,
     methods,
-    ggplot2
+    ggplot2,
+    shiny,
+    miniUI
