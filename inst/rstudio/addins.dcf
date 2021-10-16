@@ -13,5 +13,10 @@ Description: Adds metadata to R Script
 Binding: setup_analysis
 Interactive: true
 
+Name: Insert %in%
+Description: Inserts `%in%` at the cursor position.
+Binding: insert_in
+Interactive: false
+
 
 
