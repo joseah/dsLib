@@ -29,7 +29,7 @@ setup_analysis <- function(){
                                           choices =
                                             list("dsLib" ,"data.table", "purrr", "stringr", "furrr", "glue", "Seurat"),
                                           selected =
-                                            list("dsLib", "data.table", "purrr")
+                                            list("dsLib", "data.table")
                        ),
                        h1("Output"),
                        textInput("output_dir", label = "Output directory name"),
@@ -104,7 +104,8 @@ setup_analysis <- function(){
 #   ____________________________________________________________________________
 #   Set output                                                              ####
 
-output <- set_output("{input$date}", "{input$output_dir}")
+output <- here("results", "{input$date}_{input$output_dir}")
+dir.create(output)
 
 #   ____________________________________________________________________________
 #   Import data                                                             ####
